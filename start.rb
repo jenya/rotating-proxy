@@ -91,7 +91,8 @@ module Service
       super
       self.class.fire_and_forget(executable,
         "--SocksPort #{port}",
-        "--NewCircuitPeriod 120",
+        "--NewCircuitPeriod 15",
+        "--MaxCircuitDirtiness 1",
         "--DataDirectory #{data_directory}",
         "--PidFile #{pid_file}",
         "--Log \"warn syslog\"",
